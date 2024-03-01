@@ -1,0 +1,447 @@
+.subckt Counter clk reset_n count_to[3] count_to[2] count_to[1] count_to[0] count_inc count_dec load_en 
++ flag_count_max flag_count_min VDD VSS 
+x056_ VDD VSS count_dec _010_ dti_55g_10t_invx1 
+x057_ VDD VSS counter[0] _011_ dti_55g_10t_invx1 
+x058_ VDD VSS counter[2] _012_ dti_55g_10t_invx1 
+x059_ VDD VSS count_max[1] _013_ counter[1] dti_55g_10t_xor2x1 
+x060_ VDD VSS count_max[0] _014_ counter[0] dti_55g_10t_xor2x1 
+x061_ VDD VSS count_max[3] _015_ counter[3] dti_55g_10t_xor2x1 
+x062_ VDD VSS count_max[2] _016_ counter[2] dti_55g_10t_xor2x1 
+x063_ VDD VSS _014_ _013_ _017_ _016_ dti_55g_10t_or3x1 
+x064_ VDD VSS _000_ _017_ _015_ dti_55g_10t_nor2x1 
+x065_ VDD VSS counter[1] counter[0] _018_ dti_55g_10t_or2x1 
+x066_ VDD VSS _001_ counter[3] counter[2] _018_ dti_55g_10t_nor3x1 
+x067_ VDD VSS load_en reset_n _019_ dti_55g_10t_and2x1 
+x068_ VDD VSS _020_ load_en reset_n dti_55g_10t_nand2x1 
+x069_ VDD VSS _021_ count_max[0] _020_ dti_55g_10t_nand2x1 
+x070_ VDD VSS _022_ count_to[0] _019_ dti_55g_10t_nand2x1 
+x071_ VDD VSS _002_ _021_ _022_ dti_55g_10t_nand2x1 
+x072_ VDD VSS _023_ count_max[1] _020_ dti_55g_10t_nand2x1 
+x073_ VDD VSS _024_ count_to[1] _019_ dti_55g_10t_nand2x1 
+x074_ VDD VSS _003_ _023_ _024_ dti_55g_10t_nand2x1 
+x075_ VDD VSS _025_ count_max[2] _020_ dti_55g_10t_nand2x1 
+x076_ VDD VSS _026_ count_to[2] _019_ dti_55g_10t_nand2x1 
+x077_ VDD VSS _004_ _025_ _026_ dti_55g_10t_nand2x1 
+x078_ VDD VSS _027_ count_max[3] _020_ dti_55g_10t_nand2x1 
+x079_ VDD VSS _028_ count_to[3] _019_ dti_55g_10t_nand2x1 
+x080_ VDD VSS _005_ _027_ _028_ dti_55g_10t_nand2x1 
+x081_ VDD VSS count_inc _010_ _029_ dti_55g_10t_and2x1 
+x082_ VDD VSS _030_ count_inc _010_ dti_55g_10t_nand2x1 
+x083_ VDD VSS _031_ _030_ _000_ dti_55g_10t_nor2x1 
+x084_ VDD VSS _032_ _010_ count_inc _001_ dti_55g_10t_nor3x1 
+x085_ VDD VSS _033_ _031_ load_en _032_ dti_55g_10t_nor3x1 
+x086_ VDD VSS _034_ counter[0] _033_ dti_55g_10t_nand2x1 
+x087_ VDD VSS _035_ _033_ load_en dti_55g_10t_nor2x1 
+x088_ VDD VSS _036_ _011_ _035_ dti_55g_10t_nand2x1 
+x089_ VDD VSS _006_ _034_ _036_ dti_55g_10t_nand2x1 
+x090_ VDD VSS _037_ counter[1] _033_ dti_55g_10t_nand2x1 
+x091_ VDD VSS _038_ counter[1] _030_ dti_55g_10t_nand2x1 
+x092_ VDD VSS counter[1] _039_ _029_ dti_55g_10t_xor2x1 
+x093_ VDD VSS _040_ _011_ _039_ dti_55g_10t_nand2x1 
+x094_ VDD VSS _039_ _011_ _041_ dti_55g_10t_or2x1 
+x095_ VDD VSS _042_ _040_ _035_ _041_ dti_55g_10t_nand3x1 
+x096_ VDD VSS _007_ _037_ _042_ dti_55g_10t_nand2x1 
+x097_ VDD VSS _043_ counter[2] _033_ dti_55g_10t_nand2x1 
+x098_ VDD VSS _044_ _038_ _041_ dti_55g_10t_nand2x1 
+x099_ VDD VSS _045_ _030_ _012_ dti_55g_10t_nor2x1 
+x100_ VDD VSS _046_ _029_ counter[2] dti_55g_10t_nor2x1 
+x101_ VDD VSS _046_ _045_ _047_ dti_55g_10t_or2x1 
+x102_ VDD VSS _044_ _048_ _047_ dti_55g_10t_xor2x1 
+x103_ VDD VSS _049_ _035_ _048_ dti_55g_10t_nand2x1 
+x104_ VDD VSS _008_ _043_ _049_ dti_55g_10t_nand2x1 
+x105_ VDD VSS _050_ _030_ _012_ _041_ dti_55g_10t_nor3x1 
+x106_ VDD VSS _041_ _038_ _051_ _046_ dti_55g_10t_and3x1 
+x107_ VDD VSS _052_ _051_ _050_ dti_55g_10t_nor2x1 
+x108_ VDD VSS _053_ _052_ _033_ dti_55g_10t_nor2x1 
+x109_ VDD VSS counter[3] _053_ _054_ dti_55g_10t_and2x1 
+x110_ VDD VSS _055_ _053_ counter[3] dti_55g_10t_nor2x1 
+x111_ VDD VSS _009_ _054_ load_en _055_ dti_55g_10t_nor3x1 
+x112_ VDD VSS count_max[0] clk RN112_ _002_ dti_55g_10t_ffqbcka01x1 
+x113_ VDD VSS count_max[1] clk RN113_ _003_ dti_55g_10t_ffqbcka01x1 
+x114_ VDD VSS count_max[2] clk RN114_ _004_ dti_55g_10t_ffqbcka01x1 
+x115_ VDD VSS count_max[3] clk RN115_ _005_ dti_55g_10t_ffqbcka01x1 
+x116_ VDD VSS flag_count_max clk RN116_ _000_ dti_55g_10t_ffqbcka01x1 
+x117_ VDD VSS flag_count_min clk RN117_ _001_ dti_55g_10t_ffqbcka01x1 
+x118_ VDD VSS counter[0] clk reset_n _006_ dti_55g_10t_ffqbcka01x1 
+x119_ VDD VSS counter[1] clk reset_n _007_ dti_55g_10t_ffqbcka01x1 
+x120_ VDD VSS counter[2] clk reset_n _008_ dti_55g_10t_ffqbcka01x1 
+x121_ VDD VSS counter[3] clk reset_n _009_ dti_55g_10t_ffqbcka01x1 
+.ends
+
+*$Revision: 1.3 $
+*##########################################################################################
+* Copyright (c) 2017 Dolphin Technology, Inc.
+* This netlist is proprietary and confidential information of
+* Dolphin Technology, Inc. and can only be used or viewed
+* under license or with written permission from Dolphin Technology, Inc.
+*##########################################################################################
+* //andy_dell2/projects/DOLPHINLIB/cmScript/genCkt/lvsNetlist.pl -s /cygdrive/e/DATA/projects/schematic/tm65_10g/stdcells_netlist/10g/sch -d /cygdrive/e/DATA/projects/schematic/tm65_10g/stdcells_netlist/10g/lvs -p /cygdrive/e/DATA/projects/schematic/tm65_10g/perl/params.sp -c dti_55g_10t_or3x1 -nglob
+* dt65-pc:/cygdrive/e/DATA/projects/schematic/tm65_10g 
+* dti_55g_10t_or3x1.ckt generated on 3/10/2017 at 1:3:17
+*##########################################################################################
+* Dependencies
+* .                                                                      (unknown)
+* E:/DATA/projects/schematic/tm40_6g/SCHGEN/base_schematics              (unknown)
+* E:/DATA/projects/schematic/tm65/                                       (unknown)
+*##########################################################################################
+
+.param wnd=1u wpd=1u
+
+.option scale=1
+
+* ./sch/dti_55g_10t_or3x1.1: (unknown)
+.subckt dti_55g_10t_or3x1 VDD VSS B A Z C
+mn1 Z N1N47 VSS VSS nch l=0.06u w=0.525u
+mn2 N1N47 A VSS VSS nch l=0.06u w=0.525u
+mn3 N1N47 B VSS VSS nch l=0.06u w=0.525u
+mn4 N1N47 C VSS VSS nch l=0.06u w=0.525u
+mp1 Z N1N47 VDD VDD pch l=0.06u w=0.735u
+mp2 N1N47 A N1N71 VDD pch l=0.06u w=0.735u
+mp3 N1N71 B N1N85 VDD pch l=0.06u w=0.735u
+mp4 N1N85 C VDD VDD pch l=0.06u w=0.735u
+.ends
+
+*$Revision: 1.2 $
+*##########################################################################################
+* Copyright (c) 2018 Dolphin Technology, Inc.
+* This netlist is proprietary and confidential information of
+* Dolphin Technology, Inc. and can only be used or viewed
+* under license or with written permission from Dolphin Technology, Inc.
+*##########################################################################################
+* //andy_dell2/projects/DOLPHINLIB/cmScript/genCkt/lvsNetlist.pl -s /cygdrive/e/DATA/projects/schematic/tm65_10g/stdcells_netlist/tsmc55/10track/60g/sch -d /cygdrive/e/DATA/projects/schematic/tm65_10g/stdcells_netlist/tsmc55/10track/60g/ckt -p /cygdrive/e/DATA/projects/schematic/tm65_10g/perl/params.sp -c dti_55g_10t_ffqbcka01x1 -nglob
+* dt65-pc:/cygdrive/e/DATA/projects/schematic/tm65_10g 
+* dti_55g_10t_ffqbcka01x1.ckt generated on 1/29/2018 at 23:13:39
+*##########################################################################################
+* Dependencies
+* .                                                                      (unknown)
+* E:/DATA/projects/schematic/tm40_6g/SCHGEN/base_schematics              (unknown)
+* E:/DATA/projects/schematic/tm65/                                       (unknown)
+* E:/DATA/projects/schematic/instance                                    (unknown)
+*##########################################################################################
+
+.option scale=1
+
+* ./sch/dti_gen_tx.1: (unknown)
+* Last modification timestamp: 4/1/2016 1:16
+* E:/DATA/projects/schematic/tm65//sch/dti_gen_tx.1: (unknown)
+* Last modification timestamp: 4/1/2016 1:16
+* E:/DATA/projects/schematic/instance/sch/dti_gen_tx.1: (unknown)
+* Last modification timestamp: 4/1/2016 1:16
+.subckt dti_gen_tx VDD VSS PG NG IN OUT wna=0.3u wpa=0.3u
+m1i2 IN NG OUT VSS nch l=0.06u w=wna
+m1i3 IN PG OUT VDD pch l=0.06u w=wpa
+.ends
+
+* ./sch/dti_gen_inv.1: (unknown)
+* Last modification timestamp: 9/20/2000 12:10
+* E:/DATA/projects/schematic/tm65//sch/dti_gen_inv.1: (unknown)
+* Last modification timestamp: 9/20/2000 12:10
+* E:/DATA/projects/schematic/instance/sch/dti_gen_inv.1: (unknown)
+* Last modification timestamp: 9/20/2000 12:10
+.subckt dti_gen_inv VDD VSS A Z ln=0.06u lp=0.06u wn=0.3u wp=0.3u
+mn1 Z A VSS VSS nch l=ln w=wn
+mp1 Z A VDD VDD pch l=lp w=wp
+.ends
+
+* //andy_dell2/projects/DOLPHINLIB/GATES/sch/nand2.1: (unknown)
+.subckt nand2 VDD VSS A B Z ln=0.06u lp=0.06u wn=0.3u wp=0.3u
+mn1 Z A N1N11 VSS nch l=ln w=wn
+mn2 N1N11 B VSS VSS nch l=ln w=wn
+mp1 Z A VDD VDD pch l=lp w=wp
+mp2 Z B VDD VDD pch l=lp w=wp
+.ends
+
+* ./sch/dti_55g_10t_ffqbcka01x1.1: (unknown)
+.subckt dti_55g_10t_ffqbcka01x1 VDD VSS Q CK RN D
+m1i80 N1N365 RM VDD VDD pch l=0.06u w=0.15u
+m1i81 N1N287 RM N1N482 VSS nch l=0.06u w=0.15u
+m1i83 ML CKX N1N365 VDD pch l=0.06u w=0.15u
+m1i84 ML CKBF N1N287 VSS nch l=0.06u w=0.15u
+m1i481 N1N482 RN VSS VSS nch l=0.06u w=0.15u
+m1i485 N1N365 RN VDD VDD pch l=0.06u w=0.15u
+m1i519 ML D N1N525 VDD pch l=0.06u w=0.735u
+m1i520 ML D N1N515 VSS nch l=0.06u w=0.525u
+m1i521 N1N515 CKX VSS VSS nch l=0.06u w=0.425u
+m1i523 N1N525 CKBF VDD VDD pch l=0.06u w=0.595u
+m1i527 N1N531 SL VDD VDD pch l=0.06u w=0.15u
+m1i528 XIDB CKBF N1N531 VDD pch l=0.06u w=0.15u
+m1i529 XIDB CKX N1N532 VSS nch l=0.06u w=0.15u
+m1i530 N1N532 SL VSS VSS nch l=0.06u w=0.15u
+x1i106 VDD VSS CKX CKBF RM XIDB dti_gen_tx wna=0.525u wpa=0.605u
+x1i463 VDD VSS CKX CKBF dti_gen_inv ln=0.06u lp=0.06u wn=0.15u wp=0.735u
+x1i470 VDD VSS CK CKX dti_gen_inv ln=0.06u lp=0.06u wn=0.525u wp=0.15u
+x1i474 VDD VSS ML RM dti_gen_inv ln=0.06u lp=0.06u wn=0.525u wp=0.720u
+x1i495 VDD VSS SL Q dti_gen_inv ln=0.06u lp=0.06u wn=0.525u wp=0.735u
+x1i509 VDD VSS XIDB RN SL nand2 ln=0.06u lp=0.06u wn=0.525u wp=0.735u
+.ends
+
+*$Revision: 1.3 $
+*##########################################################################################
+* Copyright (c) 2017 Dolphin Technology, Inc.
+* This netlist is proprietary and confidential information of
+* Dolphin Technology, Inc. and can only be used or viewed
+* under license or with written permission from Dolphin Technology, Inc.
+*##########################################################################################
+* //andy_dell2/projects/DOLPHINLIB/cmScript/genCkt/lvsNetlist.pl -s /cygdrive/e/DATA/projects/schematic/tm65_10g/stdcells_netlist/10g/sch -d /cygdrive/e/DATA/projects/schematic/tm65_10g/stdcells_netlist/10g/lvs -p /cygdrive/e/DATA/projects/schematic/tm65_10g/perl/params.sp -c dti_55g_10t_nand3x1 -nglob
+* dt65-pc:/cygdrive/e/DATA/projects/schematic/tm65_10g 
+* dti_55g_10t_nand3x1.ckt generated on 3/10/2017 at 1:1:59
+*##########################################################################################
+* Dependencies
+* .                                                                      (unknown)
+* E:/DATA/projects/schematic/tm40_6g/SCHGEN/base_schematics              (unknown)
+* E:/DATA/projects/schematic/tm65/                                       (unknown)
+*##########################################################################################
+
+.option scale=1
+
+* ./sch/dti_55g_10t_nand3x1.1: (unknown)
+.subckt dti_55g_10t_nand3x1 VDD VSS Z B A C
+mn1 Z A N1N43 VSS nch l=0.06u w=0.525u
+mn2 N1N43 B N1N71 VSS nch l=0.06u w=0.525u
+mn3 N1N71 C VSS VSS nch l=0.06u w=0.525u
+mp1 Z A VDD VDD pch l=0.06u w=0.735u
+mp2 Z B VDD VDD pch l=0.06u w=0.735u
+mp3 Z C VDD VDD pch l=0.06u w=0.735u
+.ends
+
+*$Revision: 1.3 $
+*##########################################################################################
+* Copyright (c) 2017 Dolphin Technology, Inc.
+* This netlist is proprietary and confidential information of
+* Dolphin Technology, Inc. and can only be used or viewed
+* under license or with written permission from Dolphin Technology, Inc.
+*##########################################################################################
+* //andy_dell2/projects/DOLPHINLIB/cmScript/genCkt/lvsNetlist.pl -s /cygdrive/e/DATA/projects/schematic/tm65_10g/stdcells_netlist/10g/sch -d /cygdrive/e/DATA/projects/schematic/tm65_10g/stdcells_netlist/10g/lvs -p /cygdrive/e/DATA/projects/schematic/tm65_10g/perl/params.sp -c dti_55g_10t_nor3x1 -nglob
+* dt65-pc:/cygdrive/e/DATA/projects/schematic/tm65_10g 
+* dti_55g_10t_nor3x1.ckt generated on 3/10/2017 at 1:2:25
+*##########################################################################################
+* Dependencies
+* .                                                                      (unknown)
+* E:/DATA/projects/schematic/tm40_6g/SCHGEN/base_schematics              (unknown)
+* E:/DATA/projects/schematic/tm65/                                       (unknown)
+*##########################################################################################
+
+.option scale=1
+
+* ./sch/dti_55g_10t_nor3x1.1: (unknown)
+.subckt dti_55g_10t_nor3x1 VDD VSS Z B A C
+mn1 Z A VSS VSS nch l=0.06u w=0.525u
+mn2 Z B VSS VSS nch l=0.06u w=0.525u
+mn3 Z C VSS VSS nch l=0.06u w=0.525u
+mp1 Z A N1N71 VDD pch l=0.06u w=0.735u
+mp2 N1N71 B N1N85 VDD pch l=0.06u w=0.735u
+mp3 N1N85 C VDD VDD pch l=0.06u w=0.735u
+.ends
+
+*$Revision: 1.3 $
+*##########################################################################################
+* Copyright (c) 2017 Dolphin Technology, Inc.
+* This netlist is proprietary and confidential information of
+* Dolphin Technology, Inc. and can only be used or viewed
+* under license or with written permission from Dolphin Technology, Inc.
+*##########################################################################################
+* //andy_dell2/projects/DOLPHINLIB/cmScript/genCkt/lvsNetlist.pl -s /cygdrive/e/DATA/projects/schematic/tm65_10g/stdcells_netlist/10g/sch -d /cygdrive/e/DATA/projects/schematic/tm65_10g/stdcells_netlist/10g/lvs -p /cygdrive/e/DATA/projects/schematic/tm65_10g/perl/params.sp -c dti_55g_10t_nor2x1 -nglob
+* dt65-pc:/cygdrive/e/DATA/projects/schematic/tm65_10g 
+* dti_55g_10t_nor2x1.ckt generated on 3/10/2017 at 1:2:10
+*##########################################################################################
+* Dependencies
+* .                                                                      (unknown)
+* E:/DATA/projects/schematic/tm40_6g/SCHGEN/base_schematics              (unknown)
+* E:/DATA/projects/schematic/tm65/                                       (unknown)
+*##########################################################################################
+
+.option scale=1
+
+* ./sch/dti_55g_10t_nor2x1.1: (unknown)
+.subckt dti_55g_10t_nor2x1 VDD VSS Z B A
+mn1 Z A VSS VSS nch l=0.06u w=0.525u
+mn2 Z B VSS VSS nch l=0.06u w=0.525u
+mp1 Z A N1N71 VDD pch l=0.06u w=0.735u
+mp2 N1N71 B VDD VDD pch l=0.06u w=0.735u
+.ends
+
+*##########################################################################################
+* Copyright (c) 2018 Dolphin Technology, Inc.
+* This netlist is proprietary and confidential information of
+* Dolphin Technology, Inc. and can only be used or viewed
+* under license or with written permission from Dolphin Technology, Inc.
+*##########################################################################################
+* /cygdrive/f/scripts/base/lvsNetlist.pl -s /cygdrive/f/tsmc55_10t/stdcells_netlist/tsmc55/10track/60g/sch -d /cygdrive/f/tsmc55_10t/stdcells_netlist/tsmc55/10track/60g/ckt -p /cygdrive/f/tsmc55_10t/perl/params.sp -c dti_55g_10t_xor2x1 -nglob
+* FANKPOP-PC:/cygdrive/f/tsmc55_10t 
+* dti_55g_10t_xor2x1.ckt generated on 7/2/2018 at 10:4:28
+*##########################################################################################
+* Dependencies
+* .                                                                      (unknown)
+* F:/sourceSCH/DEVICES                                                   (unknown)
+* F:/sourceSCH/GATES                                                     (unknown)
+* F:/sourceSCH/MISC                                                      (unknown)
+* F:/sourceSCH/SOURCES                                                   (unknown)
+* F:/instance                                                            (unknown)
+*##########################################################################################
+
+.option scale=1
+
+* ./sch/dti_gen_tx.1: (unknown)
+* Last modification timestamp: 4/1/2016 1:16
+* F:/instance/sch/dti_gen_tx.1: (unknown)
+* Last modification timestamp: 4/1/2016 1:16
+
+* ./sch/dti_gen_inv.1: (unknown)
+* Last modification timestamp: 9/20/2000 12:10
+* F:/instance/sch/dti_gen_inv.1: (unknown)
+* Last modification timestamp: 9/20/2000 12:10
+
+* ./sch/dti_55g_10t_xor2x1.1: (unknown)
+.subckt dti_55g_10t_xor2x1 VDD VSS A Z B
+x1i15 VDD VSS B N1N23 N1N56 N1N27 dti_gen_tx wna=0.525u wpa=0.735u
+x1i55 VDD VSS A N1N56 dti_gen_inv ln=0.06u lp=0.06u wn=0.525u wp=0.735u
+x1i57 VDD VSS N1N27 Z dti_gen_inv ln=0.06u lp=0.06u wn=0.525u wp=0.735u
+x1i61 VDD VSS N1N23 B N1N58 N1N27 dti_gen_tx wna=0.525u wpa=0.735u
+x1i62 VDD VSS N1N56 N1N58 dti_gen_inv ln=0.06u lp=0.06u wn=0.525u wp=0.735u
+x1i63 VDD VSS B N1N23 dti_gen_inv ln=0.06u lp=0.06u wn=0.525u wp=0.735u
+.ends
+
+*$Revision: 1.3 $
+*##########################################################################################
+* Copyright (c) 2017 Dolphin Technology, Inc.
+* This netlist is proprietary and confidential information of
+* Dolphin Technology, Inc. and can only be used or viewed
+* under license or with written permission from Dolphin Technology, Inc.
+*##########################################################################################
+* //andy_dell2/projects/DOLPHINLIB/cmScript/genCkt/lvsNetlist.pl -s /cygdrive/e/DATA/projects/schematic/tm65_10g/stdcells_netlist/10g/sch -d /cygdrive/e/DATA/projects/schematic/tm65_10g/stdcells_netlist/10g/lvs -p /cygdrive/e/DATA/projects/schematic/tm65_10g/perl/params.sp -c dti_55g_10t_and3x1 -nglob
+* dt65-pc:/cygdrive/e/DATA/projects/schematic/tm65_10g 
+* dti_55g_10t_and3x1.ckt generated on 3/10/2017 at 1:0:24
+*##########################################################################################
+* Dependencies
+* .                                                                      (unknown)
+* E:/DATA/projects/schematic/tm40_6g/SCHGEN/base_schematics              (unknown)
+* E:/DATA/projects/schematic/tm65/                                       (unknown)
+*##########################################################################################
+
+.option scale=1
+
+* ./sch/dti_55g_10t_and3x1.1: (unknown)
+.subckt dti_55g_10t_and3x1 VDD VSS B A Z C
+mn1 Z N1N47 VSS VSS nch l=0.06u w=0.525u
+mn2 N1N47 A N1N43 VSS nch l=0.06u w=0.525u
+mn3 N1N43 B N1N71 VSS nch l=0.06u w=0.525u
+mn4 N1N71 C VSS VSS nch l=0.06u w=0.525u
+mp1 Z N1N47 VDD VDD pch l=0.06u w=0.735u
+mp2 N1N47 A VDD VDD pch l=0.06u w=0.735u
+mp3 N1N47 B VDD VDD pch l=0.06u w=0.735u
+mp4 N1N47 C VDD VDD pch l=0.06u w=0.735u
+.ends
+
+*##########################################################################################
+* Copyright (c) 2018 Dolphin Technology, Inc.
+* This netlist is proprietary and confidential information of
+* Dolphin Technology, Inc. and can only be used or viewed
+* under license or with written permission from Dolphin Technology, Inc.
+*##########################################################################################
+* /cygdrive/f/scripts/base/lvsNetlist.pl -s /data/projects/dxDraw/tsmc55_10t/stdcells_netlist/tsmc55/10track/60g/sch -d /data/projects/dxDraw/tsmc55_10t/stdcells_netlist/tsmc55/10track/60g/ckt -p /data/projects/dxDraw/tsmc55_10t/perl/params.sp -c dti_55g_10t_and2x1 -nglob
+* Dolphin126:/cygdrive/f/tsmc55_10t 
+* dti_55g_10t_and2x1.ckt generated on 12/4/2018 at 8:29:21
+*##########################################################################################
+* Dependencies
+* .                                                                      (unknown)
+* F:/sourceSCH/DEVICES                                                   (unknown)
+* F:/sourceSCH/GATES                                                     (unknown)
+* F:/sourceSCH/MISC                                                      (unknown)
+* F:/sourceSCH/SOURCES                                                   (unknown)
+* F:/instance                                                            (unknown)
+*##########################################################################################
+
+.option scale=1
+
+* ./sch/dti_55g_10t_and2x1.1: (unknown)
+.subckt dti_55g_10t_and2x1 VDD VSS A B Z
+mn1 Z N1N47 VSS VSS nch l=0.06u w=0.525u
+mn2 N1N47 A N1N43 VSS nch l=0.06u w=0.525u
+mn3 N1N43 B VSS VSS nch l=0.06u w=0.525u
+mp1 Z N1N47 VDD VDD pch l=0.06u w=0.735u
+mp2 N1N47 A VDD VDD pch l=0.06u w=0.735u
+mp3 N1N47 B VDD VDD pch l=0.06u w=0.735u
+.ends
+
+*##########################################################################################
+* Copyright (c) 2018 Dolphin Technology, Inc.
+* This netlist is proprietary and confidential information of
+* Dolphin Technology, Inc. and can only be used or viewed
+* under license or with written permission from Dolphin Technology, Inc.
+*##########################################################################################
+* /cygdrive/f/scripts/base/lvsNetlist.pl -s /cygdrive/f/tsmc55_10t/stdcells_netlist/tsmc55/10track/60g/sch -d /cygdrive/f/tsmc55_10t/stdcells_netlist/tsmc55/10track/60g/ckt -p /cygdrive/f/tsmc55_10t/perl/params.sp -c dti_55g_10t_invx1 -nglob
+* FANKPOP-PC:/cygdrive/f/tsmc55_10t 
+* dti_55g_10t_invx1.ckt generated on 5/8/2018 at 9:8:18
+*##########################################################################################
+* Dependencies
+* .                                                                      (unknown)
+* F:/sourceSCH/DEVICES                                                   (unknown)
+* F:/sourceSCH/GATES                                                     (unknown)
+* F:/sourceSCH/MISC                                                      (unknown)
+* F:/sourceSCH/SOURCES                                                   (unknown)
+*##########################################################################################
+
+.option scale=1
+
+* ./sch/dti_55g_10t_invx1.1: (unknown)
+.subckt dti_55g_10t_invx1 VDD VSS A Z
+mn1 Z A VSS VSS nch l=0.06u w=0.525u
+mp1 Z A VDD VDD pch l=0.06u w=0.735u
+.ends
+
+*$Revision: 1.3 $
+*##########################################################################################
+* Copyright (c) 2017 Dolphin Technology, Inc.
+* This netlist is proprietary and confidential information of
+* Dolphin Technology, Inc. and can only be used or viewed
+* under license or with written permission from Dolphin Technology, Inc.
+*##########################################################################################
+* //andy_dell2/projects/DOLPHINLIB/cmScript/genCkt/lvsNetlist.pl -s /cygdrive/e/DATA/projects/schematic/tm65_10g/stdcells_netlist/10g/sch -d /cygdrive/e/DATA/projects/schematic/tm65_10g/stdcells_netlist/10g/lvs -p /cygdrive/e/DATA/projects/schematic/tm65_10g/perl/params.sp -c dti_55g_10t_or2x1 -nglob
+* dt65-pc:/cygdrive/e/DATA/projects/schematic/tm65_10g 
+* dti_55g_10t_or2x1.ckt generated on 3/10/2017 at 1:3:14
+*##########################################################################################
+* Dependencies
+* .                                                                      (unknown)
+* E:/DATA/projects/schematic/tm40_6g/SCHGEN/base_schematics              (unknown)
+* E:/DATA/projects/schematic/tm65/                                       (unknown)
+*##########################################################################################
+
+.option scale=1
+
+* ./sch/dti_55g_10t_or2x1.1: (unknown)
+.subckt dti_55g_10t_or2x1 VDD VSS B A Z
+mn1 Z N1N47 VSS VSS nch l=0.06u w=0.525u
+mn2 N1N47 A VSS VSS nch l=0.06u w=0.525u
+mn3 N1N47 B VSS VSS nch l=0.06u w=0.525u
+mp1 Z N1N47 VDD VDD pch l=0.06u w=0.735u
+mp2 N1N47 A N1N71 VDD pch l=0.06u w=0.735u
+mp3 N1N71 B VDD VDD pch l=0.06u w=0.735u
+.ends
+
+*$Revision: 1.3 $
+*##########################################################################################
+* Copyright (c) 2017 Dolphin Technology, Inc.
+* This netlist is proprietary and confidential information of
+* Dolphin Technology, Inc. and can only be used or viewed
+* under license or with written permission from Dolphin Technology, Inc.
+*##########################################################################################
+* //andy_dell2/projects/DOLPHINLIB/cmScript/genCkt/lvsNetlist.pl -s /cygdrive/e/DATA/projects/schematic/tm65_10g/stdcells_netlist/10g/sch -d /cygdrive/e/DATA/projects/schematic/tm65_10g/stdcells_netlist/10g/lvs -p /cygdrive/e/DATA/projects/schematic/tm65_10g/perl/params.sp -c dti_55g_10t_nand2x1 -nglob
+* dt65-pc:/cygdrive/e/DATA/projects/schematic/tm65_10g 
+* dti_55g_10t_nand2x1.ckt generated on 3/10/2017 at 1:1:50
+*##########################################################################################
+* Dependencies
+* .                                                                      (unknown)
+* E:/DATA/projects/schematic/tm40_6g/SCHGEN/base_schematics              (unknown)
+* E:/DATA/projects/schematic/tm65/                                       (unknown)
+*##########################################################################################
+
+.option scale=1
+
+* ./sch/dti_55g_10t_nand2x1.1: (unknown)
+.subckt dti_55g_10t_nand2x1 VDD VSS Z A B
+mn1 Z A N1N43 VSS nch l=0.06u w=0.525u
+mn2 N1N43 B VSS VSS nch l=0.06u w=0.525u
+mp1 Z A VDD VDD pch l=0.06u w=0.735u
+mp2 Z B VDD VDD pch l=0.06u w=0.735u
+.ends
+
