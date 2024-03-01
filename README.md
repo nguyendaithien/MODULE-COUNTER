@@ -1,5 +1,5 @@
 # LSI_CONTEST_HUST
-Image Encryption and Decryption using CNN
+Design Counter module, Synthesys and Layout
 
 <span style="font-size: 120 px;">**Overview:**</span>
 
