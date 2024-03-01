@@ -1,0 +1,25 @@
+
+6. Printing statistics.
+
+=== Counter ===
+
+   Number of wires:                 66
+   Number of wire bits:             75
+   Number of public wires:          10
+   Number of public wire bits:      19
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 66
+     dti_55g_10t_and2x1              3
+     dti_55g_10t_and3x1              1
+     dti_55g_10t_ffqbcka01x1        10
+     dti_55g_10t_invx1               3
+     dti_55g_10t_nand2x1            25
+     dti_55g_10t_nand3x1             1
+     dti_55g_10t_nor2x1              8
+     dti_55g_10t_nor3x1              5
+     dti_55g_10t_or2x1               3
+     dti_55g_10t_or3x1               1
+     dti_55g_10t_xor2x1              6
+
